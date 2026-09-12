@@ -1,11 +1,11 @@
 
 resource "aws_key_pair" "custom_key" {
-  key_name   = "custom-day4"
-  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILC4IkTjePKtQ6WqeqrJ8WMrrgpqmR8Bx2SX4Oh0+//f vishal x@VishalX"
+  key_name   = "custom-key-remote-exec"
+  public_key = file("C:\\Github_projects\\terraform-labs\\Day-4\\file-provisnors\\custom-key.pub")
 }
 
 
-resource "aws_instance" "web_app2" {
+resource "aws_instance" "web_app" {
   ami = var.ami_id
   subnet_id = var.subnet_id
   instance_type = var.instance_type
@@ -14,26 +14,26 @@ resource "aws_instance" "web_app2" {
   key_name = aws_key_pair.custom_key.key_name
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
 
-  user_data = <<-EOF
-    #!/bin/bash
-    apt update -y
-    systemctl enable ssh
-    systemctl start ssh
-  EOF
 
-  provisioner "file" {
-    source      = "C:\\Github_projects\\terraform-labs\\Day-4\\file-provisnors\\index.html"
-    destination = "/home/ubuntu/index.html"
 
-    connection {
+  # Remote-exec provisioner (runs commands on the EC2 instance)
+  provisioner "remote-exec" {
+    inline = [
+      "sudo apt update -y",
+      "sudo apt install -y nginx",
+      "sudo systemctl enable nginx",
+      "sudo systemctl start nginx",
+      "echo 'Hello from Terraform remote-exec!' | sudo tee /var/www/html/index.html"
+    ]
+    
+  connection {
       type        = "ssh"
       host        = self.public_ip
       user        = "ubuntu"
       private_key = file("C:\\Github_projects\\terraform-labs\\Day-4\\file-provisnors\\custom.pem")
-      timeout     = "10m"
-    }
+      timeout     = "4m"
+   }
   }
-
 
     # user_data = <<-EOF
     #           #!/bin/bash
@@ -42,7 +42,7 @@ resource "aws_instance" "web_app2" {
     #           echo "Hello World from Inline User Data" > /var/www/html/index.html
     #           EOF
   tags = {
-    Name = "web-app2"
+    Name = "web-app"
   }
 }
 
