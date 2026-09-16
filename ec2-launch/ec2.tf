@@ -12,13 +12,13 @@ resource "aws_key_pair" "deployer" {
 resource "aws_instance" "my-insta" {
 key_name	= aws_key_pair.deployer.key_name
   
-  instance_type = "t3.micro"
+  instance_type = var.aws_instance_type
   security_groups = [aws_security_group.allow_tls.name]
   
-  ami = "ami-0b6d9d3d33ba97d99"
+  ami = var.ec2_amiid
   
   root_block_device {
-  volume_size = 10
+  volume_size = var.root_storage_size
   volume_type = "gp3"
   
   tags = {
@@ -28,6 +28,6 @@ key_name	= aws_key_pair.deployer.key_name
   }
 
   tags = {
-    Name = "HelloWorld"
+    Name = "automated-server"
   }
   }
