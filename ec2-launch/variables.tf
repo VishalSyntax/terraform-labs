@@ -9,6 +9,6 @@ variable "root_storage_size" {
 }
 
 variable "ec2_amiid" {
-	default = "ami-066c4849e6b3a1e3d"
+	default = "ami-0b6d9d3d33ba97d99"
 	type = string
 }
