@@ -16,6 +16,7 @@ key_name	= aws_key_pair.deployer.key_name
   security_groups = [aws_security_group.allow_tls.name]
   
   ami = var.ec2_amiid
+  user_data = file("install_nginx.sh")
   
   root_block_device {
   volume_size = var.root_storage_size
