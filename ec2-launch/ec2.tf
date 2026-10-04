@@ -14,6 +14,7 @@ key_name	= aws_key_pair.deployer.key_name
   
   instance_type = var.aws_instance_type
   security_groups = [aws_security_group.allow_tls.name]
+  count = 3
   
   ami = var.ec2_amiid
   user_data = file("install_nginx.sh")
