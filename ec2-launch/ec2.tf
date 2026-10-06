@@ -14,7 +14,12 @@ key_name	= aws_key_pair.deployer.key_name
   
   instance_type = var.aws_instance_type
   security_groups = [aws_security_group.allow_tls.name]
-  count = 3
+  #count = 3 #meta argument
+  
+  for_each = tomap({
+    my-automate-micro       = "t2.micro"
+    my-automate-medium = "t2.medium"
+  })
   
   ami = var.ec2_amiid
   user_data = file("install_nginx.sh")
@@ -23,13 +28,11 @@ key_name	= aws_key_pair.deployer.key_name
   volume_size = var.root_storage_size
   volume_type = "gp3"
   
-  tags = {
-    Name = "automated-insta"
-  }
+  
   
   }
 
   tags = {
-    Name = "automated-server"
+    Name = each.key
   }
   }
