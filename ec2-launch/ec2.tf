@@ -25,7 +25,7 @@ key_name	= aws_key_pair.deployer.key_name
   user_data = file("install_nginx.sh")
   
   root_block_device {
-  volume_size = var.root_storage_size
+  volume_size = var.env == "prd" ? 20 : var.ec2_default_root_storage_size
   volume_type = "gp3"
   
   
@@ -36,3 +36,8 @@ key_name	= aws_key_pair.deployer.key_name
     Name = each.key
   }
   }
+
+/* resource "aws_instance" "new_tfin" {
+  ami = "unknown"
+  instance_type = "unknown"
+} */
