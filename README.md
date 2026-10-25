@@ -1,110 +1,52 @@
 # terraform-labs
 
-i'm learning terraform with my mentor, practicing day by day. each folder is one day of work, pushed to git daily.
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-vishal0x-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/vishal0x/)  [![Institute Repo](https://img.shields.io/badge/Institute%20Repo-fortunecloudtraining-blue?style=for-the-badge&logo=github)](https://github.com/fortunecloudtraining/aws_with_terraform_july_batch)
 
-[![Mentor Repo](https://img.shields.io/badge/Mentor's%20Repo-gauravhalnawar1011-orange?style=for-the-badge&logo=github)](https://github.com/gauravhalnawar1011/IAC-terraform)  [![Institute Repo](https://img.shields.io/badge/Institute%20Repo-fortunecloudtraining-blue?style=for-the-badge&logo=github)](https://github.com/fortunecloudtraining/aws_with_terraform_april_batch)
-
----
-
-## what i've done so far
-
-| Day | what i learned | files |
-|-----|---------------|-------|
-| [Day-1](./Day-1/) | set up aws provider, launched my first ec2 instance | `main.tf` |
-| [Day-2](./Day-2/) | used variables and outputs, made the config reusable | `variables.tf`, `outputs.tf` |
-| [Day-3](./Day-3/) | stored terraform state remotely in s3 | `backend.tf` |
+> learning terraform with my mentor — all projects listed below. click 👁️ to open the folder.
 
 ---
 
-## folder structure
+## modules
 
-every day i create a new folder like this:
-
-```
-Day-N/
-├── main.tf
-├── variables.tf     # if needed
-├── outputs.tf       # if needed
-├── provider.tf      # if needed
-└── backend.tf       # if needed
-```
-
----
-
-## notes i keep coming back to
-
-**core concepts**
-- provider – connects terraform to aws (or any cloud)
-- resource – the actual thing you're creating (ec2, s3, etc.)
-- variable – makes your config reusable instead of hardcoding values
-- output – prints useful info after apply (like ip address)
-- state – terraform tracks what it created in a `.tfstate` file
-- module – reusable group of resources
-
-**commands i use daily**
-```bash
-terraform init      # first thing, sets up the project
-terraform plan      # check what will change before applying
-terraform apply     # actually create/update infra
-terraform destroy   # tear everything down
-terraform fmt       # auto-format the code
-terraform validate  # check for syntax errors
-```
-
-**provider setup**
-```hcl
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 6.0"
-    }
-  }
-}
-
-provider "aws" {
-  region = "ap-south-1"
-}
-```
-
-**variables**
-```hcl
-variable "instance_type" {
-  type    = string
-  default = "t3.micro"
-}
-```
-
-**outputs**
-```hcl
-output "instance_ip" {
-  value = aws_instance.example.public_ip
-}
-```
-
-**remote state (s3 backend)**
-```hcl
-terraform {
-  backend "s3" {
-    bucket = "my-terraform-remote-back"
-    key    = "day3/terraform.tfstate"
-    region = "ap-south-1"
-  }
-}
-```
+| # | module | what it does | view |
+|---|--------|--------------|------|
+| 1 | Compute | reusable ec2 module | [👁️](./modules/Compute/) |
+| 2 | network | vpc, subnets, igw, nat, route tables, sg, endpoints | [👁️](./modules/network/) |
+| 3 | Networking | alternate vpc/networking module | [👁️](./modules/Networking/) |
+| 4 | Storage | s3 bucket module | [👁️](./modules/Storage/) |
+| 5 | aws-alb-asg-lt | alb + auto scaling group + launch template | [👁️](./modules/aws-alb-asg-lt/) |
+| 6 | database | rds (postgresql) + dynamodb module | [👁️](./modules/database/) |
+| 7 | iam | iam roles, policies module | [👁️](./modules/iam/) |
+| 8 | security | security groups module | [👁️](./modules/security/) |
+| 9 | DNS | route53 dns module | [👁️](./modules/DNS/) |
+| 10 | aws-vpc-s3-endpoints | vpc with s3 gateway endpoints | [👁️](./modules/aws-vpc-s3-endpoints/) |
 
 ---
 
-## things to remember
+## environments
 
-- always run `terraform plan` before `terraform apply`
-- never hardcode secrets, use environment variables
-- store state in s3 so it doesn't get lost
-- tag resources so you know what's what in aws console
+| # | project | what it deploys | environments | view |
+|---|---------|-----------------|--------------|------|
+| 1 | Compute/EC2 | ec2 instances using compute module | dev | [👁️](./environments/Compute/) |
+| 2 | network/vpc | full vpc networking stack | dev | [👁️](./environments/network/) |
+| 3 | Networking/VPC | alternate vpc setup | dev | [👁️](./environments/Networking/) |
+| 4 | Storage/S3 | s3 buckets | dev, qa, uat, prod | [👁️](./environments/Storage/) |
+| 5 | database/sql/postgracesql | rds postgresql | dev, qa, uat, prod | [👁️](./environments/database/sql/postgracesql/) |
+| 6 | database/nosql/dynmodn | dynamodb table | dev, qa, uat, prod | [👁️](./environments/database/nosql/dynmodn/) |
+| 7 | iam | iam users, roles, policies | dev, qa, uat, prod | [👁️](./environments/iam/) |
+| 8 | security | security group configurations | dev, qa, uat, prod | [👁️](./environments/security/) |
+| 9 | DNS | route53 hosted zones and records | dev, qa, uat, prod | [👁️](./environments/DNS/) |
+| 10 | ec2-start-stop | ec2 lifecycle management | dev, qa, uat, prod | [👁️](./environments/ec2-start-stop/) |
+| 11 | vpc-Peering | vpc peering between two vpcs | dev, qa, uat, prod | [👁️](./environments/vpc-Peering/) |
+| 12 | aws-vpc-endpoints-demo | vpc endpoints (gateway/interface) | dev, qa, uat, prod | [👁️](./environments/aws-vpc-endpoints-demo/) |
 
 ---
 
-## useful links
+## daily sessions
 
-- [terraform docs](https://developer.hashicorp.com/terraform/docs)
-- [aws provider docs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+| day | what i learned | view |
+|-----|----------------|------|
+| Day-1 | aws provider setup, first ec2 with hardcoded values | [👁️](./Day-1/) |
+| Day-2 | variables, outputs, s3 remote backend, split files | [👁️](./Day-2/) |
+| Day-3 | security groups (ssh/http/https/icmp), ec2 + nginx via user_data | [👁️](./Day-3/) |
+| Day-4 | provisioners — file, local-exec, remote-exec over ssh | [👁️](./Day-4/) |
