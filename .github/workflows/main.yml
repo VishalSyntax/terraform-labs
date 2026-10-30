@@ -8,6 +8,6 @@ on:
 
 jobs:
   say-hello-inline-bash:
-    runs-on: macos-13
+    runs-on: macos-15
     steps:
       - run: echo "hello this 4th trigger github action"  
