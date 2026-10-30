@@ -1,10 +1,13 @@
-name: fctp hello world github Action 1st Session
+name: main branch push trigger
 
 on:
-  workflow_dispatch:
+  #workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   say-hello-inline-bash:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-      - run: echo "hello stduents this first hello world linux github action"  
+      - run: echo "hello stduents this 3rt trigger github action"  
