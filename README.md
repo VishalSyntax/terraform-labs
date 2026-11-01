@@ -43,6 +43,21 @@
 
 ## daily sessions
 
+### branch progress
+
+| day/branch | what i learned | project |
+|------------|----------------|---------|
+| day-1 | aws provider, first ec2 with hardcoded values | [Compute/EC2](./environments/Compute/) |
+| day-2 | variables, outputs, s3 remote backend, split files | [network/vpc](./environments/network/) |
+| day-3 | alternate vpc/networking setup | [Networking/VPC](./environments/Networking/) |
+| day-4 | s3 buckets, multi-env (dev/qa/uat/prod) | [Storage/S3](./environments/Storage/) |
+| day-5 | rds postgresql, db subnet groups, parameter groups | [database/sql](./environments/database/sql/postgracesql/) |
+| day-6 | dynamodb table, billing modes, gsi | [database/nosql](./environments/database/nosql/dynmodn/) |
+| day-7 | database module pushed (sql + nosql) | [database module](./modules/database/) |
+| day-8 | iam roles, policies, role-policy attachment | [iam](./environments/iam/) |
+
+### foundational labs
+
 | day | what i learned | view |
 |-----|----------------|------|
 | Day-1 | aws provider setup, first ec2 with hardcoded values | [👁️](./Day-1/) |
