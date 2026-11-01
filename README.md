@@ -43,6 +43,8 @@
 
 ## daily sessions
 
+### branch progress
+
 | day/branch | what i learned | project |
 |------------|----------------|---------|
 | day-1 | aws provider, first ec2 with hardcoded values | [Compute/EC2](./environments/Compute/) |
@@ -53,3 +55,12 @@
 | day-6 | dynamodb table, billing modes, gsi | [database/nosql](./environments/database/nosql/dynmodn/) |
 | day-7 | database module pushed (sql + nosql) | [database module](./modules/database/) |
 | day-8 | iam roles, policies, role-policy attachment | [iam](./environments/iam/) |
+
+### foundational labs
+
+| day | what i learned | view |
+|-----|----------------|------|
+| Day-1 | aws provider setup, first ec2 with hardcoded values | [👁️](./Day-1/) |
+| Day-2 | variables, outputs, s3 remote backend, split files | [👁️](./Day-2/) |
+| Day-3 | security groups (ssh/http/https/icmp), ec2 + nginx via user_data | [👁️](./Day-3/) |
+| Day-4 | provisioners — file, local-exec, remote-exec over ssh | [👁️](./Day-4/) |
