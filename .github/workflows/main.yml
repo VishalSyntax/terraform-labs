@@ -6,6 +6,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   say-hello-inline-bash:
     runs-on: macos-15
