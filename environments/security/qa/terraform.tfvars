@@ -1,0 +1,5 @@
+sg_name        = "fctp-vishal-qa-sg"
+sg_description = "QA security group managed by Terraform"
+vpc_id         = "vpc-0749377b786dca09b"
+environment    = "qa"
+allowed_cidr   = "0.0.0.0/0"

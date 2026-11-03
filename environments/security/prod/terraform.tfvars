@@ -1,0 +1,5 @@
+sg_name        = "fctp-vishal-prod-sg"
+sg_description = "Prod security group managed by Terraform"
+vpc_id         = "vpc-0749377b786dca09b"
+environment    = "prod"
+allowed_cidr   = "0.0.0.0/0"
