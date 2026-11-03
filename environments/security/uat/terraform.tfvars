@@ -1,0 +1,5 @@
+sg_name        = "fctp-vishal-uat-sg"
+sg_description = "UAT security group managed by Terraform"
+vpc_id         = "vpc-0749377b786dca09b"
+environment    = "uat"
+allowed_cidr   = "0.0.0.0/0"
