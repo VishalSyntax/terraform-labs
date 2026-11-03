@@ -1,0 +1,5 @@
+sg_name        = "fctp-vishal-dev-sg"
+sg_description = "Dev security group managed by Terraform"
+vpc_id         = "vpc-0749377b786dca09b"
+environment    = "dev"
+allowed_cidr   = "0.0.0.0/0"
