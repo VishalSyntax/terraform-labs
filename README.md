@@ -19,7 +19,8 @@
 | 7 | iam | iam roles, policies module | [👁️](./modules/iam/) |
 | 8 | security | security groups module | [👁️](./modules/security/) |
 | 9 | DNS | route53 dns module | [👁️](./modules/DNS/) |
-| 10 | aws-vpc-s3-endpoints | vpc with s3 gateway endpoints | [👁️](./modules/aws-vpc-s3-endpoints/) |
+| 10 | ec2-start-stop | lambda + eventbridge ec2 scheduler | [👁️](./modules/ec2-start-stop/) |
+| 11 | aws-vpc-s3-endpoints | vpc with s3 gateway endpoints | [👁️](./modules/aws-vpc-s3-endpoints/) |
 
 ---
 
@@ -31,9 +32,9 @@
 | 2 | network/vpc | full vpc networking stack | dev | [👁️](./environments/network/) |
 | 3 | Networking/VPC | alternate vpc setup | dev | [👁️](./environments/Networking/) |
 | 4 | Storage/S3 | s3 buckets | dev, qa, uat, prod | [👁️](./environments/Storage/) |
-| 5 | database/sql/postgracesql | rds postgresql | dev, qa, uat, prod | [👁️](./environments/database/sql/postgracesql/) |
-| 6 | database/nosql/dynmodn | dynamodb table | dev, qa, uat, prod | [👁️](./environments/database/nosql/dynmodn/) |
-| 7 | iam | iam users, roles, policies | dev, qa, uat, prod | [👁️](./environments/iam/) |
+| 5 | database/sql/postgresql | rds postgresql | dev, qa, uat, prod | [👁️](./environments/database/sql/postgracesql/) |
+| 6 | database/nosql/dynamodb | dynamodb table | dev, qa, uat, prod | [👁️](./environments/database/nosql/dynmodn/) |
+| 7 | iam | iam roles, policies | dev, qa, uat, prod | [👁️](./environments/iam/) |
 | 8 | security | security group configurations | dev, qa, uat, prod | [👁️](./environments/security/) |
 | 9 | DNS | route53 hosted zones and records | dev, qa, uat, prod | [👁️](./environments/DNS/) |
 | 10 | ec2-start-stop | ec2 lifecycle management | dev, qa, uat, prod | [👁️](./environments/ec2-start-stop/) |
@@ -44,9 +45,16 @@
 
 ## daily sessions
 
-| day | what i learned | view |
-|-----|----------------|------|
-| Day-1 | aws provider setup, first ec2 with hardcoded values | [👁️](./Day-1/) |
-| Day-2 | variables, outputs, s3 remote backend, split files | [👁️](./Day-2/) |
-| Day-3 | security groups (ssh/http/https/icmp), ec2 + nginx via user_data | [👁️](./Day-3/) |
-| Day-4 | provisioners — file, local-exec, remote-exec over ssh | [👁️](./Day-4/) |
+| day/branch | what i learned | project |
+|------------|----------------|---------|
+| day-1 | aws provider, first ec2 with hardcoded values | [Compute/EC2](./environments/Compute/) |
+| day-2 | variables, outputs, s3 remote backend, split files | [network/vpc](./environments/network/) |
+| day-3 | alternate vpc/networking setup | [Networking/VPC](./environments/Networking/) |
+| day-4 | s3 buckets, multi-env (dev/qa/uat/prod) | [Storage/S3](./environments/Storage/) |
+| day-5 | rds postgresql, db subnet groups, parameter groups | [database/sql](./environments/database/sql/postgracesql/) |
+| day-6 | dynamodb table, billing modes, gsi | [database/nosql](./environments/database/nosql/dynmodn/) |
+| day-7 | database module pushed (sql + nosql) | [database module](./modules/database/) |
+| day-8 | iam roles, policies, role-policy attachment | [iam](./environments/iam/) |
+| day-9 | security groups (ssh/http/https/icmp), reusable sg module | [security](./environments/security/) |
+| day-10 | route53 hosted zone, dns records (A/CNAME), multi-env | [DNS](./environments/DNS/) |
+| day-11 | ec2 start/stop automation with lambda + eventbridge schedules | [ec2-start-stop](./environments/ec2-start-stop/) |
