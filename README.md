@@ -7,18 +7,19 @@
 
 ## modules
 
-| # | module | what it does | view | arch |
-|---|--------|--------------|------|------|
-| 1 | Compute | reusable ec2 module | [👁️](./modules/Compute/) | [🏗️](./modules/Compute/arch.png) |
-| 2 | network | vpc, subnets, igw, nat, route tables, sg, endpoints | [👁️](./modules/network/) | [🏗️](./modules/network/arch.png) |
-| 3 | Networking | alternate vpc/networking module | [👁️](./modules/Networking/) | [🏗️](./modules/Networking/arch.png) |
-| 4 | Storage | s3 bucket module | [👁️](./modules/Storage/) | [🏗️](./modules/Storage/arch.png) |
-| 5 | aws-alb-asg-lt | alb + auto scaling group + launch template | [👁️](./modules/aws-alb-asg-lt/) | [🏗️](./modules/aws-alb-asg-lt/arch.png) |
-| 6 | database | rds (postgresql) + dynamodb module | [👁️](./modules/database/) | [🏗️](./modules/database/arch.png) |
-| 7 | iam | iam roles, policies module | [👁️](./modules/iam/) | [🏗️](./modules/iam/arch.png) |
-| 8 | security | security groups module | [👁️](./modules/security/) | [🏗️](./modules/security/arch.png) |
-| 9 | DNS | route53 dns module | [👁️](./modules/DNS/) | [🏗️](./modules/DNS/arch.png) |
-| 10 | aws-vpc-s3-endpoints | vpc with s3 gateway endpoints | [👁️](./modules/aws-vpc-s3-endpoints/) | [🏗️](./modules/aws-vpc-s3-endpoints/arch.png) |
+| # | module | what it does | view |
+|---|--------|--------------|------|
+| 1 | Compute | reusable ec2 module | [👁️](./modules/Compute/) |
+| 2 | network | vpc, subnets, igw, nat, route tables, sg, endpoints | [👁️](./modules/network/) |
+| 3 | Networking | alternate vpc/networking module | [👁️](./modules/Networking/) |
+| 4 | Storage | s3 bucket module | [👁️](./modules/Storage/) |
+| 5 | aws-alb-asg-lt | alb + auto scaling group + launch template | [👁️](./modules/aws-alb-asg-lt/) |
+| 6 | database | rds (postgresql) + dynamodb module | [👁️](./modules/database/) |
+| 7 | iam | iam roles, policies module | [👁️](./modules/iam/) |
+| 8 | security | security groups module | [👁️](./modules/security/) |
+| 9 | DNS | route53 dns module | [👁️](./modules/DNS/) |
+| 10 | ec2-start-stop | lambda + eventbridge ec2 scheduler | [👁️](./modules/ec2-start-stop/) |
+| 11 | aws-vpc-s3-endpoints | vpc with s3 gateway endpoints | [👁️](./modules/aws-vpc-s3-endpoints/) |
 
 ---
 
@@ -55,6 +56,9 @@
 | day-6 | dynamodb table, billing modes, gsi | [database/nosql](./environments/database/nosql/dynmodn/) |
 | day-7 | database module pushed (sql + nosql) | [database module](./modules/database/) |
 | day-8 | iam roles, policies, role-policy attachment | [iam](./environments/iam/) |
+| day-9 | security groups (ssh/http/https/icmp), reusable sg module | [security](./environments/security/) |
+| day-10 | route53 hosted zone, dns records (A/CNAME), multi-env | [DNS](./environments/DNS/) |
+| day-11 | ec2 start/stop automation with lambda + eventbridge schedules | [ec2-start-stop](./environments/ec2-start-stop/) |
 
 ### foundational labs
 
