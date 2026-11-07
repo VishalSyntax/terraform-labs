@@ -3,7 +3,6 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-vishal0x-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/vishal0x/)  [![Institute Repo](https://img.shields.io/badge/Institute%20Repo-fortunecloudtraining-blue?style=for-the-badge&logo=github)](https://github.com/fortunecloudtraining/aws_with_terraform_july_batch)
 
 > learning terraform with my mentor — all projects listed below. click 👁️ to open the folder.
-
 ---
 
 ## modules
@@ -26,24 +25,26 @@
 
 ## environments
 
-| # | project | what it deploys | environments | view |
-|---|---------|-----------------|--------------|------|
-| 1 | Compute/EC2 | ec2 instances using compute module | dev | [👁️](./environments/Compute/) |
-| 2 | network/vpc | full vpc networking stack | dev | [👁️](./environments/network/) |
-| 3 | Networking/VPC | alternate vpc setup | dev | [👁️](./environments/Networking/) |
-| 4 | Storage/S3 | s3 buckets | dev, qa, uat, prod | [👁️](./environments/Storage/) |
-| 5 | database/sql/postgresql | rds postgresql | dev, qa, uat, prod | [👁️](./environments/database/sql/postgracesql/) |
-| 6 | database/nosql/dynamodb | dynamodb table | dev, qa, uat, prod | [👁️](./environments/database/nosql/dynmodn/) |
-| 7 | iam | iam roles, policies | dev, qa, uat, prod | [👁️](./environments/iam/) |
-| 8 | security | security group configurations | dev, qa, uat, prod | [👁️](./environments/security/) |
-| 9 | DNS | route53 hosted zones and records | dev, qa, uat, prod | [👁️](./environments/DNS/) |
-| 10 | ec2-start-stop | ec2 lifecycle management | dev, qa, uat, prod | [👁️](./environments/ec2-start-stop/) |
-| 11 | vpc-Peering | vpc peering between two vpcs | dev, qa, uat, prod | [👁️](./environments/vpc-Peering/) |
-| 12 | aws-vpc-endpoints-demo | vpc endpoints (gateway/interface) | dev, qa, uat, prod | [👁️](./environments/aws-vpc-endpoints-demo/) |
+| # | project | what it deploys | environments | view | arch |
+|---|---------|-----------------|--------------|------|------|
+| 1 | Compute/EC2 | ec2 instances using compute module | dev | [👁️](./environments/Compute/) | [🏗️](./modules/Compute/arch.png) |
+| 2 | network/vpc | full vpc networking stack | dev | [👁️](./environments/network/) | [🏗️](./modules/network/arch.png) |
+| 3 | Networking/VPC | alternate vpc setup | dev | [👁️](./environments/Networking/) | [🏗️](./modules/Networking/arch.png) |
+| 4 | Storage/S3 | s3 buckets | dev, qa, uat, prod | [👁️](./environments/Storage/) | [🏗️](./modules/Storage/arch.png) |
+| 5 | database/sql/postgracesql | rds postgresql | dev, qa, uat, prod | [👁️](./environments/database/sql/postgracesql/) | [🏗️](./modules/database/arch.png) |
+| 6 | database/nosql/dynmodn | dynamodb table | dev, qa, uat, prod | [👁️](./environments/database/nosql/dynmodn/) | [🏗️](./modules/database/arch.png) |
+| 7 | iam | iam users, roles, policies | dev, qa, uat, prod | [👁️](./environments/iam/) | [🏗️](./modules/iam/arch.png) |
+| 8 | security | security group configurations | dev, qa, uat, prod | [👁️](./environments/security/) | [🏗️](./modules/security/arch.png) |
+| 9 | DNS | route53 hosted zones and records | dev, qa, uat, prod | [👁️](./environments/DNS/) | [🏗️](./modules/DNS/arch.png) |
+| 10 | ec2-start-stop | ec2 lifecycle management | dev, qa, uat, prod | [👁️](./environments/ec2-start-stop/) | [🏗️](./modules/aws-alb-asg-lt/arch.png) |
+| 11 | vpc-Peering | vpc peering between two vpcs | dev, qa, uat, prod | [👁️](./environments/vpc-Peering/) | [🏗️](./modules/network/arch.png) |
+| 12 | aws-vpc-endpoints-demo | vpc endpoints (gateway/interface) | dev, qa, uat, prod | [👁️](./environments/aws-vpc-endpoints-demo/) | [🏗️](./modules/aws-vpc-s3-endpoints/arch.png) |
 
 ---
 
 ## daily sessions
+
+### branch progress
 
 | day/branch | what i learned | project |
 |------------|----------------|---------|
@@ -58,3 +59,12 @@
 | day-9 | security groups (ssh/http/https/icmp), reusable sg module | [security](./environments/security/) |
 | day-10 | route53 hosted zone, dns records (A/CNAME), multi-env | [DNS](./environments/DNS/) |
 | day-11 | ec2 start/stop automation with lambda + eventbridge schedules | [ec2-start-stop](./environments/ec2-start-stop/) |
+
+### foundational labs
+
+| day | what i learned | view |
+|-----|----------------|------|
+| Day-1 | aws provider setup, first ec2 with hardcoded values | [👁️](./Day-1/) |
+| Day-2 | variables, outputs, s3 remote backend, split files | [👁️](./Day-2/) |
+| Day-3 | security groups (ssh/http/https/icmp), ec2 + nginx via user_data | [👁️](./Day-3/) |
+| Day-4 | provisioners — file, local-exec, remote-exec over ssh | [👁️](./Day-4/) |
