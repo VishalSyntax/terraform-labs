@@ -19,7 +19,8 @@
 | 8 | security | security groups module | [👁️](./modules/security/) |
 | 9 | DNS | route53 dns module | [👁️](./modules/DNS/) |
 | 10 | ec2-start-stop | lambda + eventbridge ec2 scheduler | [👁️](./modules/ec2-start-stop/) |
-| 11 | aws-vpc-s3-endpoints | vpc with s3 gateway endpoints | [👁️](./modules/aws-vpc-s3-endpoints/) |
+| 11 | vpc-peering | cross-region requester/accepter peering module | [👁️](./modules/vpc-peering/) |
+| 12 | aws-vpc-s3-endpoints | vpc with s3 gateway endpoints | [👁️](./modules/aws-vpc-s3-endpoints/) |
 
 ---
 
@@ -59,6 +60,7 @@
 | day-9 | security groups (ssh/http/https/icmp), reusable sg module | [security](./environments/security/) |
 | day-10 | route53 hosted zone, dns records (A/CNAME), multi-env | [DNS](./environments/DNS/) |
 | day-11 | ec2 start/stop automation with lambda + eventbridge schedules | [ec2-start-stop](./environments/ec2-start-stop/) |
+| day-12 | cross-region vpc peering between primary & secondary vpcs | [vpc-Peering](./environments/vpc-Peering/) |
 
 ### foundational labs
 
