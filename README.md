@@ -58,9 +58,9 @@
 | day-7 | database module pushed (sql + nosql) | [database module](./modules/database/) |
 | day-8 | iam roles, policies, role-policy attachment | [iam](./environments/iam/) |
 | day-9 | security groups (ssh/http/https/icmp), reusable sg module | [security](./environments/security/) |
-| day-10 | route53 hosted zone, dns records (A/CNAME), multi-env | [DNS](./environments/DNS/) |
-| day-11 | ec2 start/stop automation with lambda + eventbridge schedules | [ec2-start-stop](./environments/ec2-start-stop/) |
-| day-12 | cross-region vpc peering between primary & secondary vpcs | [vpc-Peering](./environments/vpc-Peering/) |
+| day-10 | route53 hosted zone, dns records & ec2 lifecycle scheduler | [DNS](./environments/DNS/), [ec2-start-stop](./environments/ec2-start-stop/) |
+| day-11 | cross-region vpc peering between primary & secondary vpcs | [vpc-Peering](./environments/vpc-Peering/) |
+| day-12 | vpc endpoints (s3 gateway & ssm interface endpoints) demo | [aws-vpc-endpoints-demo](./environments/aws-vpc-endpoints-demo/) |
 
 ### foundational labs
 
