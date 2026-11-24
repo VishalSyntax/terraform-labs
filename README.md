@@ -1,8 +1,8 @@
 # terraform-labs
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-vishal0x-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/vishal0x/)  [![Institute Repo](https://img.shields.io/badge/Institute%20Repo-fortunecloudtraining-blue?style=for-the-badge&logo=github)](https://github.com/fortunecloudtraining/aws_with_terraform_july_batch)
 
-> learning terraform with my mentor — all projects listed below. click 👁️ to open the folder.
+> learning terraform with my mentor — all projects listed below. click 👁️ to open the folder.  
+
 ---
 
 ## modules
